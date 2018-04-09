@@ -1,3 +1,135 @@
-page-home {
+.btn-center{
+    display: block;
+    position: absolute;
+    opacity: 0;
+    outline: none;
+    animation: 1.5s slide-up .5s forwards;
+}
+
+
+.btn-blue{
+  color: #fff;
+  background-color: #026880;
+  font-size: 15px;
+}
+
+
+.background-img{
+    background-image: url('/assets/imgs/ask_it.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+@keyframes slide-up {
+  0%{
+    top:70%;
+    left:37%;
+    opacity: .5;
+  }
+
+  100%{
+    top:55%;
+    left:37%;
+    opacity: 1;
+  }
+}
+
+@media only screen
+and (min-width: 460px)
+and (max-width: 599px)
+and (orientation: portrait) {
+
+  .btn-blue{
+    font-size: 17px;
+  }
+
+  @keyframes slide-up {
+    0%{
+      top:70%;
+      left:40%;
+      opacity: .5;
+    }
+
+    100%{
+      top:55%;
+      left:40%;
+      opacity: 1;
+    }
+  }
+
+}
+
+
+@media only screen
+and (min-width: 460px)
+and (max-width: 599px)
+and (orientation: landscape) {
+
+  .btn-blue{
+    font-size: 17px;
+  }
+
+  @keyframes slide-up {
+    0%{
+      top:70%;
+      left:45%;
+      opacity: .5;
+    }
+
+    100%{
+      top:55%;
+      left:45%;
+      opacity: 1;
+    }
+  }
+
+}
+
+@media only screen
+  and (min-width: 600px)
+  and (max-width: 780px) {
+
+  .btn-blue{
+    font-size: 17px;
+  }
+
+  @keyframes slide-up {
+    0%{
+      top:70%;
+      left:43%;
+      opacity: .5;
+    }
+
+    100%{
+      top:55%;
+      left:43%;
+      opacity: 1;
+    }
+  }
+
+}
+
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1366px)  {
+
+  .btn-blue{
+    font-size: 20px;
+  }
+
+  @keyframes slide-up {
+    0%{
+      top:70%;
+      left:44%;
+      opacity: .5;
+    }
+
+    100%{
+      top:55%;
+      left:44%;
+      opacity: 1;
+    }
+  }
 
 }

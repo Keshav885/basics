@@ -1,0 +1,43 @@
+<ion-header >
+
+  <ion-navbar hideBackButton>
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="container">
+    <div class="content">
+      <h4 class="text-center">Estimated
+        Current Wait Time: <br/>25min</h4>
+      <div class="content-box">
+        <p><span class="field-name">First Name</span> : {{userDetails.firstname}}</p>
+        <p><span class="field-name">Last Name</span> : {{userDetails.lastname}}</p>
+        <p><span class="field-name">Email</span> : {{userDetails.email}}</p>
+        <p><span class="field-name">Phone</span> : {{userDetails.phone}}</p>
+        <button ion-button color="main-1" class="btn-form-middle" small>EDIT</button>
+      </div>
+      <form #form="ngForm" (ngSubmit)="logForm(form)" novalidate>
+        <ion-item>
+          <ion-label>Issue Category</ion-label>
+          <ion-select name="category" [(ngModel)]="user.category" ngControl="category">
+            <ion-option>Bacon</ion-option>
+            <ion-option>Black Olives</ion-option>
+            <ion-option>Extra Cheese</ion-option>
+            <ion-option>Mushrooms</ion-option>
+            <ion-option>Pepperoni</ion-option>
+            <ion-option>Sausage</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item text-wrap>
+          <ion-label>Comment</ion-label>
+          <ion-textarea name="comment" [(ngModel)]="user.comment" ngControl="comment"></ion-textarea>
+        </ion-item>
+        <button ion-button color="main-1" type="submit" class="btn-form-middle">SUBMIT</button>
+      </form>
+    </div>
+  </div>
+
+</ion-content>

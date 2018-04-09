@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar hideBackButton>
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="container">
+    <div class="content">
+      <p class="card-header">
+        Welcome to the Ask IT Now mobile app!
+      </p>
+      <p>
+        You can use this app to see the estimated
+        current wait time at the kiosk and get a spot in line.
+        Please fill in the following information:
+      </p>
+    </div>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
+      <ion-item>
+        <ion-label>Firstname</ion-label>
+        <ion-input type="text" required name="firstname" [(ngModel)]="userInfo.firstname" ngControl="firstname"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Lastname</ion-label>
+        <ion-input type="text" required name="lastname" [(ngModel)]="userInfo.lastname" ngControl="lastname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input type="text" required name="email" [(ngModel)]="userInfo.email" ngControl="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Phone</ion-label>
+        <ion-input type="number" required name="phone" [(ngModel)]="userInfo.phone" ngControl="phone"></ion-input>
+      </ion-item>
+      <br>
+      <button type="submit" [disabled]="!form.valid" ion-button color="main-1" block>Submit</button>
+      <button ion-button color="main-1" block (click)="onBack()">Back</button>
+    </form>
+    <button ion-button color="main-1" block (click)="onBack()">Back</button>
+  </div>
+</ion-content>

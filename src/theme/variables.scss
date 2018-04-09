@@ -38,7 +38,9 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  main-1:     #026880,
+  main-2:     #d2af09
 );
 
 
@@ -61,7 +63,7 @@ $colors: (
 // Windows only Sass variables can go here
 
 
-
+$toolbar-background-image: url('/assets/imgs/banner.jpg');;
 
 // App Theme
 // --------------------------------------------------
