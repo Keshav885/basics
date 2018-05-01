@@ -1,6 +1,6 @@
 {
   "name": "basics",
-  "app_id": "",
+  "app_id": "85fec6ef",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

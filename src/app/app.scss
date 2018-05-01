@@ -14,3 +14,94 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+*{
+  font-size: 15px;
+  //margin:0;
+  //padding:0;
+}
+
+ion-header{
+  ion-navbar{
+    div.toolbar-background{
+      background-color: #2A677D;
+    }
+
+  }
+
+}
+
+
+ion-input, ion-select, ion-textarea {
+  border-bottom: 1px solid #2A677D;
+}
+
+ion-content, ion-item {
+  background-color: #f0f2f2 !important;
+}
+
+ion-header .back-button ,
+ion-navbar .toolbar-title{
+  color: #ffffff !important;
+}
+
+.img-banner{
+  max-width: 225vw;
+}
+
+.error-msg{
+  margin:0 18px;
+  color: darkred;
+  font-size: 12px;
+}
+
+.error-input{
+  border-bottom: 1px solid darkred;
+}
+
+
+@media only screen
+and (min-width: 720px) {
+  *, h4{
+    font-size: 25px;
+  }
+
+  span.button-inner{
+    font-size:30px;
+  }
+
+  span.field-name{
+    width: 200px;
+    font-size: 30px;
+  }
+
+  .container{
+    font-size: 25px;
+    position: absolute;
+    width: 70%;
+    //top: 50%;
+    left: 50%;
+    -webkit-transform: translate( -50%);
+    transform: translate( -50%);
+  }
+
+  img{
+    width: 100% !important;
+  }
+
+  .container .card-header .text-msg{
+    font-size: 30px !important;
+  }
+
+  .card-font-lg p {
+    font-size: 25px !important;
+  }
+
+  .btn-blue{
+    font-size: 22px !important;
+    padding: 25px;
+  }
+
+
+}

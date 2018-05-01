@@ -1,3 +1,8 @@
-<ion-content padding class="background-img">
-  <button class="btn-enter btn-center btn-blue" ion-button color="main-1" round (click)="onClick()">ENTER</button>
+<ion-content text-center>
+  <div class="container" class="background-img" padding>
+    <button class="btn-enter btn-center btn-blue btn-home"
+            ion-button color="main-1" round
+            (click)="onClick()">ENTER</button>
+    <h6 text-center class="text-bottom ">{{message | minutes}}</h6>
+  </div>
 </ion-content>

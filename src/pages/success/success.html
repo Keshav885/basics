@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar text-wrap hideBackButton>
+    <ion-title >Ticket Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content >
+  <img src="assets/imgs/banner.jpg" height="60"  class="img-banner" alt="FDA_logo">
+  <div class="container" padding>
+    <ion-card >
+      <ion-card-header text-wrap>
+        <div class="content-head">
+          <h3 class="text-blue text-msg">Thank you for submitting your ticket.</h3>
+        </div>
+      </ion-card-header>
+      <ion-card-content class="card-font-lg">
+        <p>Your estimated time is: <br/> <strong>{{wait_time | minutes }}</strong>
+        <p>
+          Please go to Ask It Now Kiosk 3rd floor of the building at 2nd floor:
+          <br/> <strong>{{ newTime | date:'shortTime' }}</strong>
+        </p>
+      </ion-card-content>
+    </ion-card>
+    <div class="content-body" padding>
+      <p>Actual wait times may vary, so you may receive push notifications with updates.</p>
+      <p>
+        If your estimate shifts earlier, don't worry, you won't lose your spot in line.
+        Just show up and we will assist you in a timely manner.
+      </p>
+      <button ion-button class="btn-lg" color="light-gray" (click)="onCancel()">
+        Cancel Ticket
+      </button>
+    </div>
+
+  </div>
+</ion-content>

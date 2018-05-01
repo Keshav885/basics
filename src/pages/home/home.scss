@@ -1,9 +1,9 @@
 .btn-center{
     display: block;
     position: absolute;
-    opacity: 0;
     outline: none;
-    animation: 1.5s slide-up .5s forwards;
+    opacity: 0;
+    animation: 1s slide-up .5s forwards;
 }
 
 
@@ -13,123 +13,59 @@
   font-size: 15px;
 }
 
-
 .background-img{
-    background-image: url('/assets/imgs/ask_it.jpg');
+    background-image: url('../assets/imgs/ask_it.jpg');
     background-position: center;
     background-size: cover;
     height: 100vh;
 }
 
+
+.text-bottom{
+  position: absolute;
+  top: 68%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  animation: 1s slide-up-text .5s forwards;
+}
+
+
 @keyframes slide-up {
   0%{
-    top:70%;
-    left:37%;
+    top: 68%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     opacity: .5;
   }
 
   100%{
-    top:55%;
-    left:37%;
+    top: 60%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     opacity: 1;
   }
 }
 
-@media only screen
-and (min-width: 460px)
-and (max-width: 599px)
-and (orientation: portrait) {
-
-  .btn-blue{
-    font-size: 17px;
+@keyframes slide-up-text {
+  0%{
+    top: 73%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: .5;
   }
 
-  @keyframes slide-up {
-    0%{
-      top:70%;
-      left:40%;
-      opacity: .5;
-    }
-
-    100%{
-      top:55%;
-      left:40%;
-      opacity: 1;
-    }
+  100%{
+    top: 65%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 1;
   }
-
 }
 
 
-@media only screen
-and (min-width: 460px)
-and (max-width: 599px)
-and (orientation: landscape) {
-
-  .btn-blue{
-    font-size: 17px;
-  }
-
-  @keyframes slide-up {
-    0%{
-      top:70%;
-      left:45%;
-      opacity: .5;
-    }
-
-    100%{
-      top:55%;
-      left:45%;
-      opacity: 1;
-    }
-  }
-
-}
-
-@media only screen
-  and (min-width: 600px)
-  and (max-width: 780px) {
-
-  .btn-blue{
-    font-size: 17px;
-  }
-
-  @keyframes slide-up {
-    0%{
-      top:70%;
-      left:43%;
-      opacity: .5;
-    }
-
-    100%{
-      top:55%;
-      left:43%;
-      opacity: 1;
-    }
-  }
-
-}
-
-@media only screen
-  and (min-device-width: 1024px)
-  and (max-device-width: 1366px)  {
-
-  .btn-blue{
-    font-size: 20px;
-  }
-
-  @keyframes slide-up {
-    0%{
-      top:70%;
-      left:44%;
-      opacity: .5;
-    }
-
-    100%{
-      top:55%;
-      left:44%;
-      opacity: 1;
-    }
-  }
-
-}

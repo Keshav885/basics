@@ -1,47 +1,88 @@
 <ion-header>
 
-  <ion-navbar hideBackButton>
-    <ion-title></ion-title>
+  <ion-navbar>
+    <ion-title>Enter Details</ion-title>
   </ion-navbar>
 
 </ion-header>
 
+<ion-content>
+  <img src="assets/imgs/banner.jpg" height="60"  class="img-banner" alt="FDA_logo">
 
-<ion-content padding>
-  <div class="container">
+  <div class="container" padding>
     <div class="content">
-      <p class="card-header">
+      <h4 class="content-header text-blue">
         Welcome to the Ask IT Now mobile app!
-      </p>
+      </h4>
       <p>
         You can use this app to see the estimated
-        current wait time at the kiosk and get a spot in line.
+        current wait time at the kiosk and get a spot in line. <br/>
         Please fill in the following information:
       </p>
     </div>
     <form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
-      <ion-item>
-        <ion-label>Firstname</ion-label>
-        <ion-input type="text" required name="firstname" [(ngModel)]="userInfo.firstname" ngControl="firstname"></ion-input>
+      <ion-item no-lines>
+        <ion-label floating color="main-1">Firstname*</ion-label>
+        <ion-input [class.error-input]="fn.touched && !fn.valid" type="text" required name="first_name" [(ngModel)]="userInfo.first_name" #fn="ngModel" ngModel></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label>Lastname</ion-label>
-        <ion-input type="text" required name="lastname" [(ngModel)]="userInfo.lastname" ngControl="lastname"></ion-input>
+      <ion-label *ngIf="fn.touched && !fn.valid" no-lines no-margin>
+        <p class="error-msg">Firstname is required.</p>
+      </ion-label>
+      <ion-item no-lines>
+        <ion-label floating color="main-1">Lastname*</ion-label>
+        <ion-input [class.error-input]="ln.touched && !ln.valid" type="text" required name="last_name" [(ngModel)]="userInfo.last_name" #ln="ngModel" ngModel></ion-input>
       </ion-item>
+      <ion-label *ngIf="ln.touched && !ln.valid" no-lines no-margin>
+        <p class="error-msg">Lastname is required.</p>
+      </ion-label>
 
-      <ion-item>
-        <ion-label>Email</ion-label>
-        <ion-input type="text" required name="email" [(ngModel)]="userInfo.email" ngControl="email"></ion-input>
+      <ion-item no-lines>
+        <ion-label floating color="main-1">Email*</ion-label>
+        <ion-input
+          [class.error-input]="email.touched && !email.valid"
+          type="email"
+          name="email"
+          [(ngModel)]="userInfo.email"
+          #email="ngModel"
+          ngModel
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+          (keyup)="userInfo.email=$event.target.value.toLowerCase()"
+        >
+        </ion-input>
       </ion-item>
+      <span *ngIf="email.touched && email.errors">
+        <span [hidden]="!email.errors.required">
+          <p class="error-msg">Email is required.</p>
+        </span>
+        <span [hidden]="!email.errors.pattern">
+          <p class="error-msg" >Email is invalid.</p>
+        </span>
+      </span>
 
-      <ion-item>
-        <ion-label>Phone</ion-label>
-        <ion-input type="number" required name="phone" [(ngModel)]="userInfo.phone" ngControl="phone"></ion-input>
+      <ion-item no-lines>
+        <ion-label floating color="main-1">Phone*</ion-label>
+        <ion-input name="phone_number"
+                   minlength="14"
+                   maxlength="14"
+                   ngModel
+                   #phone="ngModel"
+                   type="tel"
+                   class="form-control"
+                   id="phone"
+                   required
+                   [(ngModel)]="userInfo.phone_number"
+                   [pattern]="pattern"
+                   [brmasker]="{ mask:'(000) 000-0000', len:14}"
+        >
+        </ion-input>
       </ion-item>
+      <ion-label *ngIf="phone.touched && !phone.valid" no-lines no-margin>
+        <p class="error-msg">Phone is required.</p>
+      </ion-label>
       <br>
-      <button type="submit" [disabled]="!form.valid" ion-button color="main-1" block>Submit</button>
-      <button ion-button color="main-1" block (click)="onBack()">Back</button>
+      <button type="submit" [disabled]="!form.valid" ion-button color="main-1" class="btn-lg">SUBMIT</button>
+      <!--<button type="submit" ion-button color="main-1" class="btn-lg">SUBMIT</button>-->
     </form>
-    <button ion-button color="main-1" block (click)="onBack()">Back</button>
   </div>
 </ion-content>

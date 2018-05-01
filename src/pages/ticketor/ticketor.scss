@@ -13,16 +13,50 @@
   text-align: center;
 }
 
+.text-blue{
+  color: #047295 !important;
+}
 
 .field-name{
   display: inline-block;
   width: 115px;
+  color: #047295 !important;
+  font-size: 17px;
+}
+
+.field-data{
+  color: #222;
+  font-size: 17px;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.alert-radio-label {
+  white-space: normal!important;
 }
 
 .btn-form-middle{
   text-align: center;
   display: block;
-  margin: 10px auto;
+  margin: 20px auto 10px auto;
+}
+
+.btn-lg{
+  width: 90%;
+  display: block;
+  margin: 20px auto 0 auto;
+}
+
+.card-msg{
+  border-bottom: 1px solid #dcdede;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 40px;
+}
+
+.icon-right{
+  display:flex;
+  justify-content: flex-end;
 }
 
 .comment{
